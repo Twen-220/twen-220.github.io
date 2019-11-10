@@ -1,0 +1,30 @@
+.tree-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #444;
+    border: 1px solid #555;
+    padding: 0 0 0 10px;
+}
+
+.equipment-block {
+    min-height: 30px;
+    background: #444;
+    border: 1px solid #555;
+}
+
+.element__text {
+    float: left;
+    padding: 0 0 0 15px;
+}
+
+.element__indicator {
+    float: right;
+    padding: 0 15px 0 0;
+}
+
+.element__button {
+    float: left;
+    width: 10px;
+    text-align: center;
+}
