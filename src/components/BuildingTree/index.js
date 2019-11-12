@@ -1,35 +1,34 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './styles.css'
+import Building from '../Building'
 
-class BuildingTree extends Component {
+class BuildingTree extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoaded: false,
+            data: null
+        }
+    }
+
     render() {
-        return <div className="row">
-            <div className="col-md-4">
-                <ul className="tree-list">
-                    <li className="element">
-                        <div className="element__button">+</div>
-                        <div className="element__text">Text</div>
-                        <div className="element__indicator">(20)</div>
-                        <div className="clearfix"></div>
-                    </li>
-                    <li className="element">
-                        <div className="element__button">-</div>
-                        <div className="element__text">Text</div>
-                        <div className="element__indicator">(20)</div>
-                        <div className="clearfix"></div>
-                    </li>
-                    <li className="element">
-                        <div className="element__button">+</div>
-                        <div className="element__text">Text</div>
-                        <div className="element__indicator">(20)</div>
-                        <div className="clearfix"></div>
-                    </li>
-                </ul>
-            </div>
-            <div className="equipment-block col-md-8">
-                
-            </div>
-        </div>
+        var data = this.state.isLoaded && Array.from(this.state.data);
+        var listData = this.state.isLoaded && data.map((building) =>             
+            <Building key={building["_id"]} data={building}></Building>
+        );
+        return this.state.isLoaded && <ul className="list">{listData}</ul>
+    }
+
+    componentDidMount() {
+        var buildings = new window.sc.Query("buildings");
+        buildings.find().then((finded) => {
+            let buildingsData = finded.result;
+            this.setState({
+                isLoaded: true,
+                data: buildingsData
+            })
+        });
     }
 }
 

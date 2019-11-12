@@ -1,0 +1,10 @@
+.rooms {
+    padding: 5px 10px 5px 20px;
+    margin: 0;
+    list-style: none;
+}
+
+.list__button {
+    color: #99F;
+    cursor: pointer;
+}

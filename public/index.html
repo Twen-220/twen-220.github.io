@@ -7,6 +7,27 @@
     <title>React App</title>
 
     <link rel='stylesheet' href='styles.css'/>
+ 
+    <script src="scorocode.js"></script>
+    <script>
+      Scorocode.Init({
+          ApplicationID: "3196b2e873234547ad8b06ed636d3538",
+          JavaScriptKey: "5e85f685a23e44e6abad95accc1dd2ea",
+          MasterKey: "659d718ff9664f6fafbdb79efc93cb34"
+      });
+
+      window.sc = Scorocode;
+
+      function getData(){
+        var buildings = new Scorocode.Query("buildings");
+        buildings.find().then((finded) => {
+        let buildings = finded.result;
+        console.info(buildings);
+        });
+      }
+
+      // getData()
+    </script>
   </head>
   <body>
     <div id="root"></div>
