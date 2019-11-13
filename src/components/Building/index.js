@@ -21,7 +21,7 @@ class Building extends React.Component {
             ) : undefined;
             rooms = rooms !== undefined ? <ul className="sublist col-sm-12">{rooms}</ul> : undefined;
             var roomsList = this.state.isOpened ? rooms : undefined;
-            var button = data["rooms"].length > 0 ? <div onClick={this.handleClick} className="list__button">{this.state.isOpened ? 'V' :'>'}</div> : undefined;
+            var button = data["rooms"].length > 0 ? <div onClick={this.handleClick} className="list__button">{this.state.isOpened ? 'v' :'>'}</div> : undefined;
             var building = <li className="list__item row" id={data["_id"]} key={data["_id"]}>
                 <div className="col-sm-2">{button}</div>
                 <div className="list__text col-sm-10">{data["name"]}</div>
