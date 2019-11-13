@@ -12,9 +12,9 @@ class Room extends React.Component {
 
     render(){
         if (this.state.isLoaded){
-        return <li>{this.state.data["name"]}</li>
+            return <li className="row"><div className="col-md-12">{this.state.data["name"]}</div></li>
         } else
-        return <li>Void</li>
+            return <li>Void</li>
     }
 
     componentDidMount(){

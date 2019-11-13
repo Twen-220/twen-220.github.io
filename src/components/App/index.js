@@ -9,10 +9,10 @@ class App extends Component {
         var body=
             <div className="container app-wrapper">
                 <div className="row">
-                    <div className="col-md-6 block">
+                    <div id="buildingsTree" className="col-md-6 block">
                         <BuildingTree></BuildingTree>
                     </div>
-                    <div className="col-md-6 block">
+                    <div id="equipmentList" className="col-md-6 block">
                         <EquipmentList></EquipmentList>
                     </div>
                 </div>

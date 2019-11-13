@@ -19,8 +19,7 @@ class Building extends React.Component {
             var rooms = data["rooms"].length > 0 ? this.state.data["rooms"].map((item) =>
              <Room key={item["id"]} id={item["id"]} data={item}></Room>
             ) : undefined;
-            rooms = rooms !== undefined ? <ul>{rooms}</ul> : undefined;
-            console.log(data)
+            rooms = rooms !== undefined ? <ul className="sublist col-md-12">{rooms}</ul> : undefined;
             var roomsList = this.state.isOpened ? rooms : undefined;
             var button = data["rooms"].length > 0 ? <div onClick={this.handleClick} className="list__button">{this.state.isOpened ? 'V' :'>'}</div> : undefined;
             var building = <li className="list__item row" id={data["_id"]} key={data["_id"]}>
@@ -38,17 +37,13 @@ class Building extends React.Component {
         this.setState({
             isLoaded: true,
             data: this.props.data,
-            isOpened: false
         })
     }
 
     handleClick = () => {
         this.setState({
-            isLoaded: this.state.isLoaded,
             isOpened: !this.state.isOpened,
-            data: this.state.data
         })
-        console.log(this.state)
     }
 }
 
